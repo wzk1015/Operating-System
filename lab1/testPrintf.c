@@ -57,6 +57,8 @@ int main(){
         }
         /* we found a '%' */
         /* check for long */
+        prec=0;
+        width=0;
         if (*fmt == '-') {
             ladjust = 1;
             fmt++;
@@ -180,7 +182,7 @@ int main(){
 
             default:
                 /* output this char as it is */
-                output(buf,length);
+                output(*fmt,1);
         }       /* switch (*fmt) */
 
         fmt ++;
